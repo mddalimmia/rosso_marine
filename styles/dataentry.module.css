@@ -1,0 +1,15 @@
+.container {
+  margin: 5px;
+  padding: 20px 30px;
+  background-color: rgb(247, 247, 247);
+}
+.generalInfoWrapper {
+  display: inline-block;
+  align-items: center;
+}
+.generalInfoWrapper div input {
+  height: 40px;
+  width: 255px;
+  padding-left: 7px;
+  padding-right: 75px;
+}

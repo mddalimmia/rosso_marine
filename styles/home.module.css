@@ -1,0 +1,25 @@
+.home {
+  margin: 0;
+  padding: 0;
+}
+.homeWrapper {
+  padding: 20px 30px;
+  border-top: 1px solid rgb(52, 63, 52);
+  background-color: rgb(245, 245, 245);
+}
+.input {
+  padding: 20px 0px;
+  display: flex;
+  align-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.input input {
+  margin: 30px;
+  padding: 20px;
+  width: 45vw;
+}
+.postContainer {
+  display: flex;
+}

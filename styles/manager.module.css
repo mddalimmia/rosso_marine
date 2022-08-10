@@ -1,0 +1,116 @@
+.container {
+  width: 100%;
+  height: auto;
+}
+.wrapper {
+  padding: 5px;
+  border: 2px solid rgb(68, 67, 67);
+  border-radius: 3px;
+}
+.box {
+  margin: 5px;
+  padding: 10px 20px;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+.top {
+  padding: 7px;
+  background-color: rgb(2, 2, 41);
+}
+.top h3 {
+  color: rgb(255, 255, 255);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.top h4 {
+  color: rgb(202, 205, 207);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.information {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 20px 10%;
+}
+.depurture h6 {
+  margin-top: 0;
+}
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 25px;
+}
+
+.button1 {
+  display: flex;
+  align-items: center;
+
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 26px;
+  padding-right: 26px;
+  cursor: pointer;
+  background-color: rgb(13, 80, 33);
+  border: none;
+  border-radius: 3px;
+  margin-right: 20px;
+}
+.button1 p {
+  font-size: 10px;
+  font-weight: 200;
+  color: white;
+}
+.aifillread {
+  font-size: 20px;
+  padding-right: 5px;
+  color: wheat;
+}
+.button2 {
+  display: flex;
+  align-items: center;
+
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 26px;
+  padding-right: 26px;
+  cursor: pointer;
+  background-color: rgb(15, 2, 61);
+  border: none;
+  border-radius: 3px;
+  margin-right: 20px;
+}
+.button2 p {
+  font-size: 10px;
+  font-weight: 200;
+  color: white;
+}
+.twotone {
+  font-size: 20px;
+  padding-right: 5px;
+  color: wheat;
+}
+.button3 {
+  display: flex;
+  align-items: center;
+
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 40px;
+  padding-right: 40px;
+  cursor: pointer;
+  background-color: rgb(148, 9, 9);
+  border: none;
+  border-radius: 3px;
+  margin-right: 20px;
+}
+.button3 p {
+  font-size: 10px;
+  font-weight: 200;
+  color: white;
+}
+.delete {
+  font-size: 20px;
+  padding-right: 5px;
+  color: wheat;
+}

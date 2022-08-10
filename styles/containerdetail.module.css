@@ -1,0 +1,251 @@
+.container {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  background-color: rgb(247, 247, 247);
+}
+.wrapper {
+  padding: 12px 32px;
+}
+.bltable table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border-top: 1px solid rgb(134, 132, 132);
+  border-bottom: 2px solid black;
+}
+.bltable table tr th:nth-child(1) {
+  padding: 10px;
+  width: 10%;
+  background-color: rgb(190, 189, 187);
+  color: rgb(6, 7, 7);
+}
+.bltable table tr th:nth-child(2) {
+  width: 90%;
+  text-align: left;
+  padding: 10px;
+}
+.mode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.mode h5 {
+  font-size: 20px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 600;
+}
+.curricon {
+  font-size: 100px;
+  color: rgb(3, 49, 49);
+}
+.timelineWrapper {
+  width: 100%;
+  border: 1px solid gray;
+}
+
+.timeline {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+}
+.dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: rgb(24, 24, 104);
+}
+.originData {
+  margin-right: 50px;
+}
+.originData p {
+  font-size: 15px;
+  font-weight: 300;
+  margin-left: 5px;
+}
+.tripOrigin {
+  height: 6vh;
+  width: 4vw;
+  color: rgba(16, 155, 155, 0.719);
+}
+.sendPlane {
+  height: 6vh;
+  width: 4vw;
+  color: rgba(16, 155, 155, 0.719);
+}
+
+.bar {
+  height: 2vh;
+  width: 50%;
+  position: relative;
+  padding-left: -2px;
+  background-color: rgba(16, 155, 155, 0.719);
+}
+.locationButton {
+  height: 6vh;
+  width: 4vw;
+  color: rgb(160, 14, 14);
+}
+.destinationData {
+  margin-left: 5px;
+}
+.destinationData p {
+  font-size: 15px;
+  font-weight: 300;
+}
+.timetable {
+  width: 100%;
+}
+.timetable table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border-top: 1px solid rgb(134, 132, 132);
+  border-bottom: 1px solid black;
+}
+.timetable table tr th {
+  padding: 10px 5px;
+  border: 1px solid rgb(112, 110, 110);
+  text-align: center;
+}
+
+.timetable table tr td {
+  padding: 7px 2px;
+  border: 1px solid rgb(112, 110, 110);
+  border-collapse: collapse;
+  text-align: center;
+}
+.locations {
+  padding: 7px 5px;
+}
+.depurturetime {
+  padding: 2px 5px;
+}
+.continformation {
+  margin-top: 21px;
+  margin-bottom: 21px;
+}
+.contwrapper {
+  padding-top: 21px;
+}
+.contwrapper table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+}
+.contwrapper table tr th {
+  border: 1px solid grey;
+  text-align: center;
+  padding: 8px 3px;
+}
+.contwrapper table tr td {
+  border: 1px solid grey;
+  text-align: center;
+  padding: 8px 3px;
+}
+.currentlocation {
+  margin-top: 21px;
+}
+.currentlocation h4 {
+  font-family: "Times New Roman", Times, serif;
+  text-decoration: underline;
+  font-weight: 400;
+}
+
+.locationtable table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+}
+.locationtable table tr th {
+  padding: 5px 8px;
+  width: 100%;
+  border: 1px solid rgb(112, 110, 110);
+  text-align: center;
+}
+.locationtable table tr th :nth-child(1) {
+  width: 40%;
+}
+.locationtable table tr th :nth-child(2) {
+  width: 40%;
+}
+.locationtable table tr th :nth-child(3) {
+  width: 60%;
+}
+.locationtable table tr td :nth-child(1) {
+  width: 40%;
+}
+.locationtable table tr td :nth-child(2) {
+  width: 40%;
+}
+.locationtable table tr td :nth-child(3) {
+  width: 60%;
+}
+.locationtable table tr td {
+  padding: 5px 8px;
+  border: 1px solid rgb(112, 110, 110);
+  text-align: center;
+}
+.movement {
+  margin-top: 21px;
+}
+.movement h3 {
+  text-decoration: underline;
+  font-weight: 400;
+}
+.movementTable table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+}
+.movementTable table tr th {
+  padding: 5px 8px;
+  border: 1px solid rgb(112, 110, 110);
+  text-align: center;
+}
+.movementTable table tr td {
+  padding: 5px 8px;
+  border: 1px solid rgb(112, 110, 110);
+  text-align: center;
+}
+.nationItem {
+  margin-top: 21px;
+}
+.nationItem table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+}
+.nationItem table tr th {
+  padding: 5px 8px;
+  border: 1px solid rgb(112, 110, 110);
+  text-align: center;
+}
+.nationItem table tr td {
+  padding: 5px 8px;
+  border: 1px solid rgb(112, 110, 110);
+  text-align: center;
+}
+.shipmentProgress {
+  margin-top: 21px;
+}
+.shipmentProgress table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+}
+.shipmentProgress table tr th {
+  padding: 5px 8px;
+  border: 1px solid rgb(112, 110, 110);
+  text-align: center;
+}
+.shipmentProgress table tr td {
+  padding: 5px 8px;
+  border: 1px solid rgb(112, 110, 110);
+  text-align: center;
+}
