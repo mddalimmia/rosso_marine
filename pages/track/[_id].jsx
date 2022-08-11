@@ -94,11 +94,12 @@ const ContainerPage = ({ containerData }) => {
                 <div className={styles.originData}>
                   <p>{containerData.originlocation}</p>
                 </div>
-                <div>
-                  <RiNavigationFill className={styles.sendPlane} />
-                </div>
+
                 <div>
                   <MdTripOrigin className={styles.tripOrigin} />
+                </div>
+                <div>
+                  <RiNavigationFill className={styles.sendPlane} />
                 </div>
                 <div className={styles.bar}></div>
                 <div>
