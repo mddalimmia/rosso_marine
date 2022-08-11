@@ -3,7 +3,7 @@ import styles from "../../styles/containerdetail.module.css";
 import { useState, useEffect } from "react";
 import { GiCargoShip } from "react-icons/gi";
 import { MdLocalShipping, MdTripOrigin, MdLocationPin } from "react-icons/md";
-import { RiSendPlane2Fill } from "react-icons/ri";
+import { RiNavigationFill } from "react-icons/ri";
 import axios from "axios";
 import Footer from "../../Components/Footer";
 import Navbar from "../../Components/navbar";
@@ -95,12 +95,12 @@ const ContainerPage = ({ containerData }) => {
                   <p>{containerData.originlocation}</p>
                 </div>
                 <div>
+                  <RiNavigationFill className={styles.sendPlane} />
+                </div>
+                <div>
                   <MdTripOrigin className={styles.tripOrigin} />
                 </div>
                 <div className={styles.bar}></div>
-                <div>
-                  <RiSendPlane2Fill className={styles.sendPlane} />
-                </div>
                 <div>
                   <MdLocationPin className={styles.locationButton} />
                 </div>
