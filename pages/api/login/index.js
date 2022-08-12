@@ -14,7 +14,7 @@ const handler = async (req, res) => {
           path: "/",
         })
       );
-      res.status(200).json();
+      res.status(200).json("Successfull");
     } else error;
     {
       console.log(error);
