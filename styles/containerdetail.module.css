@@ -3,7 +3,7 @@
   margin: 0;
   box-sizing: border-box;
   overflow: hidden;
-  background-color: rgb(247, 247, 247);
+  background-color: rgb(226, 222, 222);
 }
 .wrapper {
   padding: 12px 32px;
@@ -26,27 +26,26 @@
   text-align: left;
   padding: 10px;
 }
-.mode {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-.mode h5 {
-  font-size: 20px;
-  font-family: "Times New Roman", Times, serif;
-  font-weight: 600;
-}
-.curricon {
-  font-size: 100px;
-  color: rgb(3, 49, 49);
-}
+
 .timelineWrapper {
   width: 100%;
   border: 1px solid gray;
 }
 
+.notification {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 5% 0%;
+}
+.active {
+  font-size: 3rem;
+  color: rgb(238, 61, 61);
+}
+.notification h5 {
+  font-weight: 300;
+}
 .timeline {
   display: flex;
   width: 100%;
@@ -71,27 +70,38 @@
 .sendPlane {
   height: 6vh;
   width: 4vw;
-  color: rgba(16, 155, 155, 0.719);
+  color: rgba(2, 26, 26, 0.719);
   display: inline-block;
-  transform: rotate(134deg);
+  transform: rotate(133deg);
+  position: relative;
+  left: -55%;
+  top: 10%;
 }
 .tripOrigin {
-  height: 6vh;
+  position: relative;
+  top: -5%;
+  height: 5vh;
   width: 4vw;
-  color: rgba(16, 155, 155, 0.719);
+  color: rgba(6, 59, 59, 0.719);
 }
 
 .bar {
-  height: 2vh;
+  height: 1.5vh;
   width: 50%;
   position: relative;
   padding-left: -2px;
-  background-color: rgba(16, 155, 155, 0.719);
+  background-color: rgba(6, 59, 59, 0.719);
+  left: -4%;
+  top: -2.5px;
+  z-index: 1;
 }
 .locationButton {
   height: 6vh;
   width: 4vw;
   color: rgb(160, 14, 14);
+  position: relative;
+  top: -2vh;
+  left: -5vw;
 }
 .destinationData {
   margin-left: 5px;

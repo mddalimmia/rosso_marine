@@ -2,7 +2,12 @@ import React from "react";
 import styles from "../../styles/containerdetail.module.css";
 import { useState, useEffect } from "react";
 import { GiCargoShip } from "react-icons/gi";
-import { MdLocalShipping, MdTripOrigin, MdLocationPin } from "react-icons/md";
+import {
+  MdLocalShipping,
+  MdTripOrigin,
+  MdNotificationsActive,
+  MdLocationPin,
+} from "react-icons/md";
 import { RiNavigationFill } from "react-icons/ri";
 import axios from "axios";
 import Footer from "../../Components/Footer";
@@ -83,12 +88,13 @@ const ContainerPage = ({ containerData }) => {
               </tr>
             </table>
           </div>
-          <div className={styles.mode}>
-            <h5>Mode</h5>
-            <div className={styles.curricon}>{currIcon}</div>
-          </div>
+          <div className={styles.mode}></div>
           <div className={styles.timelineWrapper}>
             <div className={styles.timelinebody}>
+              <div className={styles.notification}>
+                <MdNotificationsActive className={styles.active} />
+                <h3>{currdescription}</h3>
+              </div>
               <div className={styles.timeline}>
                 <div className={styles.dot}></div>
                 <div className={styles.originData}>
