@@ -1,7 +1,7 @@
 import cookie from "cookie";
-const handler = async (req, res) => {
+const handler = (req, res) => {
   if (req.method === "POST") {
-    const { username, password } = await req.body;
+    const { username, password } = req.body;
     if (
       username === process.env.ADMIN_USERNAME &&
       password === process.env.ADMIN_PASSWORD
@@ -15,9 +15,8 @@ const handler = async (req, res) => {
         })
       );
       res.status(200).json("Successfull");
-    } else error;
-    {
-      console.log(error);
+    } else {
+      res.status(400).json("Username and Password doesn't match");
     }
   }
 };

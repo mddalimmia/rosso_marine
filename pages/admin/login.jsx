@@ -9,7 +9,7 @@ const Login = () => {
 
   const handleClick = async () => {
     try {
-      await axios.post(`${process.env.BASE_URL}/api/login`, {
+      await axios.post(`/api/login`, {
         username,
         password,
       });
@@ -30,7 +30,7 @@ const Login = () => {
           placeholder="Password"
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button className={styles.loginButton} onClick={() => handleClick()}>
+        <button className={styles.loginButton} onClick={handleClick}>
           Login
         </button>
       </div>

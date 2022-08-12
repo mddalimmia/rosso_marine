@@ -26,13 +26,13 @@ const AdminPage = ({ info }) => {
               </div>
               <div className={styles.addContainer}>
                 <AiFillFileAdd className={styles.aiadd} />
-                <Link href={`${process.env.BASE_URL}/admin/dataentry`}>
+                <Link href={`/admin/dataentry`}>
                   <p>New Shipment</p>
                 </Link>
               </div>
               <div className={styles.manageShipment}>
                 <BsClipboardData className={styles.clip} />
-                <Link href={`${process.env.BASE_URL}/admin/manage`}>
+                <Link href={`/admin/manage`}>
                   <p>Manage Shipment </p>
                 </Link>
               </div>

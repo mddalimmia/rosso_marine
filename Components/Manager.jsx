@@ -25,12 +25,12 @@ const Post = ({ management }) => {
         <div>
           {management
             .filter((managedData) => managedData.blno.includes(query))
-            .map((manageData) => {
+            .map((managedData) => {
               return (
-                <div key={manageData._id} className={styles.box}>
-                  <h3>B/L: {manageData.blno}</h3>
-                  <h4>Container No: {manageData.containerno}</h4>
-                  <button onClick={() => handleDelete(manageData._id)}>
+                <div key={managedData._id} className={styles.box}>
+                  <h3>B/L: {managedData.blno}</h3>
+                  <h4>Container No: {managedData.containerno}</h4>
+                  <button onClick={() => handleDelete(managedData._id)}>
                     Delete
                   </button>
                 </div>

@@ -31,7 +31,7 @@ export async function getServerSideProps(ctx) {
       },
     };
   }
-  const res = await axios.get(`${process.env.BASE_URL}/api/data`);
+  const res = await axios.get(`http://localhost:3000/api/data`);
   const manager = res.data;
   return {
     props: {

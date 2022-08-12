@@ -29,9 +29,11 @@ export default function Home({ info }) {
             .filter((information) => information.blno.includes(query))
             .map((information) => {
               return (
-                <Link href={`/track/${information._id}`} key={information._id}>
-                  <Post postData={information} />
-                </Link>
+                <div key={information._id}>
+                  <Link href={`/track/${information._id}`}>
+                    <Post postData={information} />
+                  </Link>
+                </div>
               );
             })}
         </div>
