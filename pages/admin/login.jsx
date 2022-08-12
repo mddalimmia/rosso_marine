@@ -4,8 +4,8 @@ import { useRouter } from "next/router";
 import styles from "../../styles/login.module.css";
 const Login = () => {
   const router = useRouter();
-  const [username, setUsername] = useState();
-  const [password, setPassword] = useState();
+  const [username, setUsername] = useState(null);
+  const [password, setPassword] = useState(null);
 
   const handleClick = async () => {
     try {
