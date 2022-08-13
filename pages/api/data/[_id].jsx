@@ -23,4 +23,16 @@ export default async function postDetail(req, res) {
       console.log(error);
     }
   }
+  if (method === "PUT") {
+    try {
+      const tables = await Table.findByIdAndUpdate(
+        _id,
+        { $set: req.body },
+        { new: true }
+      );
+      res.status(200).json(tables);
+    } catch (error) {
+      console.log(error);
+    }
+  }
 }

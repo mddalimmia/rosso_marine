@@ -93,7 +93,7 @@ const ContainerPage = ({ containerData }) => {
             <div className={styles.timelinebody}>
               <div className={styles.notification}>
                 <MdNotificationsActive className={styles.active} />
-                <h3>{currdescription}</h3>
+                <h3>Vessel Depurtured From POL</h3>
               </div>
               <div className={styles.timeline}>
                 <div className={styles.dot}></div>

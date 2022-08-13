@@ -33,6 +33,9 @@ const Post = ({ management }) => {
                   <button onClick={() => handleDelete(managedData._id)}>
                     Delete
                   </button>
+                  <Link href={`/admin/edit/${managedData._id}`}>
+                    <button>Edit</button>
+                  </Link>
                 </div>
               );
             })}

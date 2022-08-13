@@ -1,11 +1,12 @@
 import axios from "axios";
 import React from "react";
 import { useState } from "react";
-import Footer from "../../Components/Footer";
-import Navbar from "../../Components/navbar";
-import styles from "../../styles/dataentry.module.css";
+import { useRouter } from "next/router";
+import Footer from "../../../Components/Footer";
+import Navbar from "../../../Components/navbar";
 
-const Index = () => {
+const Index = ({ editData }) => {
+  const router = useRouter();
   const [mode, setMode] = useState();
   const [containerno, setContainerno] = useState();
   const [booked, setBooked] = useState();
@@ -50,7 +51,7 @@ const Index = () => {
   const [chinacams, setChinacams] = useState();
   const [japanafr, setJapanafr] = useState();
 
-  const handleCreate = async () => {
+  const handleEdit = async (_id) => {
     try {
       const newData = {
         mode,
@@ -100,7 +101,8 @@ const Index = () => {
         chinacams,
         japanafr,
       };
-      await axios.post(`/api/data`, newData);
+      await axios.put(`/api/data/${_id}`, newData);
+      router.push("/admin/manage");
     } catch (err) {
       console.log(err);
     }
@@ -109,9 +111,9 @@ const Index = () => {
   return (
     <>
       <Navbar />
-      <div className={styles.container}>
-        <h1>Enter your B/L / Container Data</h1>
-        <div className={styles.mode}>
+      <div>
+        <h1>Edit your B/L / Container Data</h1>
+        <div>
           <div>
             <h5>Select Shipping Mode</h5>
             <div>
@@ -133,23 +135,29 @@ const Index = () => {
               Vessel
             </div>
           </div>
-          <div className={styles.generalInfo}>
+          <div>
             <h2>General Information</h2>
-            <div className={styles.generalInfoWrapper}>
+            <div>
               <div>
                 <label>B/L No.</label>
-                <input type="text" onChange={(e) => setBlno(e.target.value)} />
+                <input
+                  type="text"
+                  defaultValue={editData.blno}
+                  onChange={(e) => setBlno(e.target.value)}
+                />
               </div>
               <div>
                 <label>Container No.</label>
                 <input
                   type="text"
+                  defaultValue={editData.containerno}
                   onChange={(e) => setContainerno(e.target.value)}
                 />
               </div>
               <div>
                 <label>Booking Date</label>
                 <input
+                  defaultValue={editData.booked}
                   type="text"
                   onChange={(e) => setBooked(e.target.value)}
                 />
@@ -158,17 +166,23 @@ const Index = () => {
                 <label>Vessel/Voyage Name: </label>
                 <input
                   type="text"
+                  defaultValue={editData.vesselname}
                   onChange={(e) => setVesselname(e.target.value)}
                 />
               </div>
               <div>
                 <label>Route: </label>
-                <input type="text" onChange={(e) => setRoute(e.target.value)} />
+                <input
+                  type="text"
+                  defaultValue={editData.route}
+                  onChange={(e) => setRoute(e.target.value)}
+                />
               </div>
               <div>
                 <label>Service Term</label>
                 <input
                   type="text"
+                  defaultValue={editData.serviceterm}
                   onChange={(e) => setServiceterm(e.target.value)}
                 />
               </div>
@@ -176,6 +190,7 @@ const Index = () => {
                 <label>Weight</label>
                 <input
                   type="text"
+                  defaultValue={editData.weight}
                   onChange={(e) => setWeight(e.target.value)}
                 />
               </div>
@@ -183,6 +198,7 @@ const Index = () => {
                 <label>Cntr/Type:</label>
                 <input
                   type="text"
+                  defaultValue={editData.cntrtype}
                   onChange={(e) => setCntrtype(e.target.value)}
                 />
               </div>
@@ -190,6 +206,7 @@ const Index = () => {
                 <label>Cell No.</label>
                 <input
                   type="text"
+                  defaultValue={editData.cellno}
                   onChange={(e) => setCellno(e.target.value)}
                 />
               </div>
@@ -197,6 +214,7 @@ const Index = () => {
                 <label>Seal No.</label>
                 <input
                   type="text"
+                  defaultValue={editData.sealno}
                   onChange={(e) => setSealno(e.target.value)}
                 />
               </div>
@@ -204,6 +222,7 @@ const Index = () => {
                 <label>Sender Company:</label>
                 <input
                   type="text"
+                  defaultValue={editData.sendercompany}
                   onChange={(e) => setSendercompany(e.target.value)}
                 />
               </div>
@@ -211,6 +230,7 @@ const Index = () => {
                 <label>Reciever Company:</label>
                 <input
                   type="text"
+                  defaultValue={editData.recievercompany}
                   onChange={(e) => setRecievercompany(e.target.value)}
                 />
               </div>
@@ -225,6 +245,7 @@ const Index = () => {
                 <label>Origin</label>
                 <input
                   type="text"
+                  defaultValue={editData.originlocation}
                   onChange={(e) => setOriginlocation(e.target.value)}
                 />
               </div>
@@ -232,6 +253,7 @@ const Index = () => {
                 <label>Loading Port</label>
                 <input
                   type="text"
+                  defaultValue={editData.loadinglocation}
                   onChange={(e) => setLoadinglocation(e.target.value)}
                 />
               </div>
@@ -239,6 +261,7 @@ const Index = () => {
                 <label>Discharging Port</label>
                 <input
                   type="text"
+                  defaultValue={editData.dischargelocation}
                   onChange={(e) => setDischargelocation(e.target.value)}
                 />
               </div>
@@ -246,6 +269,7 @@ const Index = () => {
                 <label>Destination</label>
                 <input
                   type="text"
+                  defaultValue={editData.destinationlocation}
                   onChange={(e) => setDestinationlocation(e.target.value)}
                 />
               </div>
@@ -258,11 +282,13 @@ const Index = () => {
                 <label>At Loading</label>
                 <input
                   type="text"
+                  defaultValue={editData.loadingarrivaldate}
                   onChange={(e) => setLoadingarrivaldate(e.target.value)}
                   placeholder="Date"
                 />
                 <input
                   type="text"
+                  defaultValue={editData.loadingarrivaltime}
                   onChange={(e) => setLoadingarrivaltime(e.target.value)}
                   placeholder="Time"
                 />
@@ -271,11 +297,13 @@ const Index = () => {
                 <label>At Discharging</label>
                 <input
                   type="text"
+                  defaultValue={editData.dischargearrivaldate}
                   onChange={(e) => setDischargearrivaldate(e.target.value)}
                   placeholder="Date"
                 />
                 <input
                   type="text"
+                  defaultValue={editData.dischargearrivaltime}
                   onChange={(e) => setDischargearrivaltime(e.target.value)}
                   placeholder="Time"
                 />
@@ -284,11 +312,13 @@ const Index = () => {
                 <label>At Destination</label>
                 <input
                   type="text"
+                  defaultValue={editData.destinationarrivaldate}
                   onChange={(e) => setDestinationarrivaldate(e.target.value)}
                   placeholder="Date"
                 />
                 <input
                   type="text"
+                  defaultValue={editData.destinationarrivaltime}
                   onChange={(e) => setDestinationarrivaltime(e.target.value)}
                   placeholder="Time"
                 />
@@ -301,11 +331,13 @@ const Index = () => {
                   <label>From Origin</label>
                   <input
                     type="text"
+                    defaultValue={editData.origindeparturedate}
                     onChange={(e) => setOrigindeparturedate(e.target.value)}
                     placeholder="Date"
                   />
                   <input
                     type="text"
+                    defaultValue={editData.origindeparturetime}
                     onChange={(e) => setOrigindeparturetime(e.target.value)}
                     placeholder="Time"
                   />
@@ -314,11 +346,13 @@ const Index = () => {
                   <label>From Loading</label>
                   <input
                     type="text"
+                    defaultValue={editData.loadingdeparturedate}
                     onChange={(e) => setLoadingdeparturedate(e.target.value)}
                     placeholder="Date"
                   />
                   <input
                     type="text"
+                    defaultValue={editData.loadingdeparturetime}
                     onChange={(e) => setLoadingdeparturetime(e.target.value)}
                     placeholder="Time"
                   />
@@ -327,11 +361,13 @@ const Index = () => {
                   <label>From Disharge </label>
                   <input
                     type="text"
+                    defaultValue={editData.dischargedeparturedate}
                     placeholder="Optional Date"
                     onChange={(e) => setDischargedeparturedate(e.target.value)}
                   />
                   <input
                     type="text"
+                    defaultValue={editData.dischargedeparturetime}
                     placeholder="Optional Time"
                     onChange={(e) => setDischargedeparturetime(e.target.value)}
                   />
@@ -345,11 +381,13 @@ const Index = () => {
                   <label>Date Time </label>
                   <input
                     type="text"
+                    defaultValue={editData.returncontainerdate}
                     placeholder="Date"
                     onChange={(e) => setReturncontainerdate(e.target.value)}
                   />
                   <input
                     type="text"
+                    defaultValue={editData.returncontainertime}
                     placeholder="Time"
                     onChange={(e) => setReturncontainertime(e.target.value)}
                   />
@@ -363,6 +401,7 @@ const Index = () => {
                   <label>At Loading Port </label>
                   <input
                     type="text"
+                    defaultValue={editData.loadarrivaliso}
                     placeholder="e.g:2022-12-12T14:20"
                     onChange={(e) => setLoadarrivaliso(e.target.value)}
                   />
@@ -371,6 +410,7 @@ const Index = () => {
                   <label>At Discharging Port </label>
                   <input
                     type="text"
+                    defaultValue={editData.dischargearrivaliso}
                     placeholder="e.g:2022-12-12T14:20"
                     onChange={(e) => setDischargearrivaliso(e.target.value)}
                   />
@@ -380,6 +420,7 @@ const Index = () => {
                   <label>At Destination </label>
                   <input
                     type="text"
+                    defaultValue={editData.destinationarrivaliso}
                     placeholder="e.g:2022-12-12T14:20"
                     onChange={(e) => setDestinationarrivaliso(e.target.value)}
                   />
@@ -392,6 +433,7 @@ const Index = () => {
                 <label> From Origin</label>
                 <input
                   type="text"
+                  defaultValue={editData.origindepurtureiso}
                   placeholder="e.g:2022-12-12T14:20"
                   onChange={(e) => setOrigindepurtureiso(e.target.value)}
                 />
@@ -400,6 +442,7 @@ const Index = () => {
                 <label> From Loading Port </label>
                 <input
                   type="text"
+                  defaultValue={editData.loaddepurtureiso}
                   placeholder="e.g:2022-12-12T14:20"
                   onChange={(e) => setLoaddepurtureiso(e.target.value)}
                 />
@@ -408,6 +451,7 @@ const Index = () => {
                 <label> From Discharging Port </label>
                 <input
                   type="text"
+                  defaultValue={editData.dischargedepurtureiso}
                   placeholder="e.g:2022-12-12T14:20"
                   onChange={(e) => setDischargedepurtureiso(e.target.value)}
                 />
@@ -422,6 +466,7 @@ const Index = () => {
               <label> Return Date Time </label>
               <input
                 type="text"
+                defaultValue={editData.returncontainerdateiso}
                 placeholder="e.g:2022-12-12T14:20"
                 onChange={(e) => setReturnContainerdateiso(e.target.value)}
               />
@@ -484,7 +529,7 @@ const Index = () => {
             Japan/AFR
           </div>
         </div>
-        <button onClick={handleCreate}>Upload</button>
+        <button onClick={() => handleEdit(editData._id)}>Update</button>
       </div>
       <Footer />
     </>
@@ -492,3 +537,10 @@ const Index = () => {
 };
 
 export default Index;
+export async function getServerSideProps({ params }) {
+  const res = await axios.get(`${process.env.BASE_URL}/api/data/${params._id}`);
+  const editData = res.data;
+  return {
+    props: { editData },
+  };
+}
