@@ -160,7 +160,7 @@ const Index = () => {
               </div>
               <div className={styles.ginfo}>
                 <label>
-                  <h3>Vessel/Voyage Name:</h3>Vessel/Voyage Name:{" "}
+                  <h3>Vessel/Voyage Name:</h3>
                 </label>
                 <input
                   type="text"
