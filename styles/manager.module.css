@@ -1,3 +1,16 @@
+.input {
+  padding: 20px 0px;
+  display: flex;
+  align-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.input input {
+  margin: 30px;
+  padding: 20px;
+  width: 45vw;
+}
 .container {
   width: 100%;
   height: auto;
@@ -56,10 +69,9 @@
   border-radius: 3px;
   margin-right: 20px;
 }
-.button1 p {
-  font-size: 10px;
+.button1 {
   font-weight: 200;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 .aifillread {
   font-size: 20px;
@@ -75,7 +87,8 @@
   padding-left: 26px;
   padding-right: 26px;
   cursor: pointer;
-  background-color: rgb(15, 2, 61);
+  color: rgb(255, 255, 255);
+  background-color: rgb(7, 2, 24);
   border: none;
   border-radius: 3px;
   margin-right: 20px;
@@ -99,7 +112,8 @@
   padding-left: 40px;
   padding-right: 40px;
   cursor: pointer;
-  background-color: rgb(148, 9, 9);
+  color: rgb(255, 255, 255);
+  background-color: rgb(104, 6, 6);
   border: none;
   border-radius: 3px;
   margin-right: 20px;

@@ -17,25 +17,58 @@ const Post = ({ management }) => {
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
-        <input
-          type="text"
-          placeholder="search...."
-          onChange={(e) => setQuery(e.target.value)}
-        />
+        <div className={styles.input}>
+          <input
+            type="text"
+            placeholder="search...."
+            onChange={(e) => setQuery(e.target.value)}
+          />
+        </div>
+
         <div>
           {management
-            .filter((managedData) => managedData.blno.includes(query))
+            .filter(
+              (managedData) =>
+                managedData.blno.includes(query) ||
+                managedData.containerno.includes(query)
+            )
             .map((managedData) => {
               return (
-                <div key={managedData._id} className={styles.box}>
-                  <h3>B/L: {managedData.blno}</h3>
-                  <h4>Container No: {managedData.containerno}</h4>
-                  <button onClick={() => handleDelete(managedData._id)}>
-                    Delete
-                  </button>
-                  <Link href={`/admin/edit/${managedData._id}`}>
-                    <button>Edit</button>
-                  </Link>
+                <div key={managedData._id} className={styles.container}>
+                  <div className={styles.wrapper}>
+                    <div className={styles.top}>
+                      <h3>B/L: {managedData.blno}</h3>
+                      <h4>Container No: {managedData.containerno}</h4>
+                    </div>
+                    <div className={styles.information}>
+                      <div className={styles.depurture}>
+                        From <br />
+                        <h5> {managedData.originlocation}</h5>
+                        <h6>{managedData.origindeparturedate}</h6>
+                        <h6>{managedData.origindeparturetime}</h6>
+                      </div>
+                      <div className={styles.arrival}>
+                        To <br />
+                        <h4> {managedData.destinationlocation}</h4>
+                        <h5>{managedData.destinationarrivaldate}</h5>
+                        <h6>{managedData.destinationarrivaltime}</h6>
+                      </div>
+                    </div>
+                    <div className={styles.btn}>
+                      <Link href={`/track/${managedData._id}`}>
+                        <button className={styles.button1}>View Details</button>
+                      </Link>
+                      <button
+                        className={styles.button2}
+                        onClick={() => handleDelete(managedData._id)}
+                      >
+                        Delete
+                      </button>
+                      <Link href={`/admin/edit/${managedData._id}`}>
+                        <button className={styles.button3}>Edit</button>
+                      </Link>
+                    </div>
+                  </div>
                 </div>
               );
             })}
