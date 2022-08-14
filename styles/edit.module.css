@@ -1,0 +1,142 @@
+.container {
+  margin: 5px;
+  padding: 20px 30px;
+  background-color: rgb(247, 247, 247);
+}
+.mode {
+  display: flex;
+  flex-direction: column;
+}
+.generalInfo {
+  display: flex;
+  flex-direction: column;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+.info input {
+  height: 40px;
+  width: 70%;
+  padding-left: 7px;
+  padding-right: 75px;
+}
+.locationWrapper {
+  display: flex;
+  flex-direction: column;
+}
+.location {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+.location input {
+  height: 40px;
+  width: 70%;
+  padding-left: 7px;
+  padding-right: 75px;
+}
+.arrivalWrapper {
+  display: flex;
+  flex-direction: column;
+}
+.arrival {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+.arrival input {
+  height: 40px;
+  width: 70%;
+  margin: 10px 0px;
+  padding-left: 7px;
+  padding-right: 75px;
+}
+.departureWrapper {
+  display: flex;
+  flex-direction: column;
+}
+.departure {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+.departure input {
+  height: 40px;
+  width: 70%;
+  margin: 10px 0px;
+  padding-left: 7px;
+  padding-right: 75px;
+}
+.returnWrapper {
+  display: flex;
+  flex-direction: column;
+}
+.return {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+.return input {
+  height: 40px;
+  width: 70%;
+  padding-left: 7px;
+  margin: 10px 0px;
+  padding-right: 75px;
+}
+.isoWrapper {
+  display: flex;
+  flex-direction: column;
+}
+.iso {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+.iso input {
+  height: 40px;
+  width: 70%;
+  padding-left: 7px;
+
+  padding-right: 75px;
+}
+.returnisoWrapper {
+  display: flex;
+  flex-direction: column;
+}
+.returniso {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+.returniso input {
+  height: 40px;
+  width: 70%;
+  padding-left: 7px;
+
+  padding-right: 75px;
+}
+.buttonWrapper {
+  display: flex;
+}
+.btn {
+  padding: 0px 45px;
+  margin: 30px 10px;
+  font-size: 15px;
+  font-weight: 400;
+  background-color: rgb(3, 43, 24);
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.btn2 {
+  padding: 10px 15px;
+  margin: 30px 10px;
+  font-size: 15px;
+  font-weight: 400;
+  background-color: rgb(10, 6, 68);
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}

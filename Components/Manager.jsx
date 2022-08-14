@@ -58,15 +58,15 @@ const Post = ({ management }) => {
                       <Link href={`/track/${managedData._id}`}>
                         <button className={styles.button1}>View Details</button>
                       </Link>
+                      <Link href={`/admin/edit/${managedData._id}`}>
+                        <button className={styles.button3}>Edit</button>
+                      </Link>
                       <button
                         className={styles.button2}
                         onClick={() => handleDelete(managedData._id)}
                       >
                         Delete
                       </button>
-                      <Link href={`/admin/edit/${managedData._id}`}>
-                        <button className={styles.button3}>Edit</button>
-                      </Link>
                     </div>
                   </div>
                 </div>
