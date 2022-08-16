@@ -20,7 +20,7 @@ const ContainerPage = ({ containerData }) => {
   const date4 = new Date(containerData.dischargearrivaliso);
   const date5 = new Date(containerData.dischargedepurtureiso);
   const date6 = new Date(containerData.destinationarrivaliso);
-  const date7 = new Date(containerData.returncontainerdateiso);
+  const date7 = new Date(containerData.returncontainerdate);
   const [currlocation, setCurrlocation] = useState(null);
   const [currdescription, setCurrdescription] = useState(null);
   const [currdate, setCurrdate] = useState(null);
@@ -37,7 +37,7 @@ const ContainerPage = ({ containerData }) => {
   }, [modeType]);
   useEffect(() => {
     return () => {
-      date7 <= Date()
+      date7 <= new Date()
         ? (setCurrdescription("Empty Container Returned"),
           setCurrlocation(containerData.destinationlocation),
           setCurrdate(containerData.returncontainerdate),
