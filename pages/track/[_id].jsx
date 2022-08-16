@@ -37,37 +37,37 @@ const ContainerPage = ({ containerData }) => {
   }, [modeType]);
   useEffect(() => {
     return () => {
-      date7 <= new Date(Date.now())
+      date7.getTime() <= new Date().getTime()
         ? (setCurrdescription("Empty Container Returned"),
           setCurrlocation(containerData.destinationlocation),
           setCurrdate(containerData.returncontainerdate),
           setCurrtime(containerData.returncontainertime))
-        : date6 <= new Date()
+        : date6.getTime() <= new Date().getTime()
         ? (setCurrdescription("Vessel Arrived at Destination"),
           setCurrlocation(containerData.destinationlocation),
           setCurrdate(containerData.destinationarrivaldate),
           setCurrtime(containerData.destinationarrivaltime))
-        : date5 <= new Date()
+        : date5.getTime() <= new Date().getTime()
         ? (setCurrdescription("Vessel Depurtured From Discharging Port"),
           setCurrlocation(containerData.dischargelocation),
           setCurrdate(containerData.dischargedeparturedate),
           setCurrtime(containerData.dischargedeparturetime))
-        : date4 <= new Date()
+        : date4.getTime() <= new Date().getTime()
         ? (setCurrdescription("Vessel Arrived at Discharging Port"),
           setCurrlocation(containerData.dischargelocation),
           setCurrdate(containerData.dischargearrivaldate),
           setCurrtime(containerData.dischargearrivaltime))
-        : date3 <= new Date()
+        : date3.getTime() <= new Date().getTime()
         ? (setCurrdescription("Vessel Depurtured from Loading Port"),
           setCurrlocation(containerData.loadinglocation),
           setCurrdate(containerData.loadingdeparturedate),
           setCurrtime(containerData.loadingdeparturetime))
-        : date2 <= new Date()
+        : date2.getTime() <= new Date().getTime()
         ? (setCurrdescription("Vessel Arrived at Loading Port"),
           setCurrlocation(containerData.loadinglocation),
           setCurrdate(containerData.loadingarrivaldate),
           setCurrtime(containerData.loadingarrivaltime))
-        : date1 <= new Date()
+        : date1.getTime() <= new Date().getTime()
         ? (setCurrdescription("Vessel Depurtured from Origin"),
           setCurrlocation(containerData.originlocation),
           setCurrdate(containerData.origindeparturedate),
