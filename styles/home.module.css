@@ -24,8 +24,11 @@
 .postContainer {
   display: flex;
 }
+.box {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
 .container {
-  width: 25%;
   margin: 0 10px;
   border-radius: 3px;
   margin-bottom: 20px;

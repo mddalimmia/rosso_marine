@@ -74,7 +74,33 @@ const ContainerPage = ({ containerData }) => {
           setCurrtime(containerData.origindeparturetime))
         : "";
     };
-  });
+  }, [
+    "containerData.destinationarrivaldate",
+    "containerData.destinationarrivaltime",
+    "containerData.destinationlocation",
+    "containerData.dischargearrivaldate",
+    "containerData.dischargearrivaltime",
+    "containerData.dischargedeparturedate",
+    "containerData.dischargedeparturetime",
+    "containerData.dischargelocation",
+    "containerData.loadingarrivaldate",
+    "containerData.loadingarrivaltime",
+    "containerData.loadingdeparturedate",
+    "containerData.loadingdeparturetime",
+    "containerData.loadinglocation",
+    "containerData.origindeparturedate",
+    "containerData.origindeparturetime",
+    "containerData.originlocation",
+    "containerData.returncontainerdate",
+    "containerData.returncontainertime",
+    "date1",
+    "date2",
+    "date3",
+    "date4",
+    "date5",
+    "date6",
+    "date7",
+  ]);
   return (
     <>
       <Navbar />

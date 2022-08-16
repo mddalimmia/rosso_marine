@@ -26,7 +26,7 @@ export default function Home({ information }) {
             onChange={(e) => setQuery(e.target.value)}
           />
         </div>
-        <div>
+        <div className={styles.box}>
           {query === null
             ? null
             : information
@@ -35,9 +35,9 @@ export default function Home({ information }) {
                     informationData.blno.includes(query) ||
                     informationData.containerno.includes(query)
                 )
-                .map((informationData) => {
+                .map((informationData, Index) => {
                   return (
-                    <div key={informationData._id} className={styles.container}>
+                    <div key={Index} className={styles.container}>
                       <div className={styles.wrapper}>
                         <div className={styles.top}>
                           <h3>B/L: {informationData.blno}</h3>
