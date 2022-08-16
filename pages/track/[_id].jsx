@@ -37,37 +37,37 @@ const ContainerPage = ({ containerData }) => {
   }, [modeType]);
   useEffect(() => {
     return () => {
-      date7 <= new Date()
+      date7 <= Date()
         ? (setCurrdescription("Empty Container Returned"),
           setCurrlocation(containerData.destinationlocation),
           setCurrdate(containerData.returncontainerdate),
           setCurrtime(containerData.returncontainertime))
-        : date6 <= new Date()
+        : date6 <= Date()
         ? (setCurrdescription("Vessel Arrived at Destination"),
           setCurrlocation(containerData.destinationlocation),
           setCurrdate(containerData.destinationarrivaldate),
           setCurrtime(containerData.destinationarrivaltime))
-        : date5 <= new Date()
+        : date5 <= Date()
         ? (setCurrdescription("Vessel Depurtured From Discharging Port"),
           setCurrlocation(containerData.dischargelocation),
           setCurrdate(containerData.dischargedeparturedate),
           setCurrtime(containerData.dischargedeparturetime))
-        : date4 <= new Date()
+        : date4 <= Date()
         ? (setCurrdescription("Vessel Arrived at Discharging Port"),
           setCurrlocation(containerData.dischargelocation),
           setCurrdate(containerData.dischargearrivaldate),
           setCurrtime(containerData.dischargearrivaltime))
-        : date3 <= new Date()
+        : date3 <= Date()
         ? (setCurrdescription("Vessel Depurtured from Loading Port"),
           setCurrlocation(containerData.loadinglocation),
           setCurrdate(containerData.loadingdeparturedate),
           setCurrtime(containerData.loadingdeparturetime))
-        : date2 <= new Date()
+        : date2 <= Date()
         ? (setCurrdescription("Vessel Arrived at Loading Port"),
           setCurrlocation(containerData.loadinglocation),
           setCurrdate(containerData.loadingarrivaldate),
           setCurrtime(containerData.loadingarrivaltime))
-        : date1 <= new Date()
+        : date1 <= Date()
         ? (setCurrdescription("Vessel Depurtured from Origin"),
           setCurrlocation(containerData.originlocation),
           setCurrdate(containerData.origindeparturedate),
