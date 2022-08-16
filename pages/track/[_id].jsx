@@ -14,13 +14,13 @@ import Footer from "../../Components/Footer";
 import Navbar from "../../Components/navbar";
 const ContainerPage = ({ containerData }) => {
   const modeType = containerData.mode;
-  const date1 = new Date(containerData.origindepurtureiso).toLocaleString();
-  const date2 = new Date(containerData.loadarrivaliso).toLocaleString();
-  const date3 = new Date(containerData.loaddepurtureiso).toLocaleString();
-  const date4 = new Date(containerData.dischargearrivaliso).toLocaleString();
-  const date5 = new Date(containerData.dischargedepurtureiso).toLocaleString();
-  const date6 = new Date(containerData.destinationarrivaliso).toLocaleString();
-  const date7 = new Date(containerData.returncontainerdateiso).toLocaleString();
+  const date1 = new Date(containerData.origindepurtureiso);
+  const date2 = new Date(containerData.loadarrivaliso);
+  const date3 = new Date(containerData.loaddepurtureiso);
+  const date4 = new Date(containerData.dischargearrivaliso);
+  const date5 = new Date(containerData.dischargedepurtureiso);
+  const date6 = new Date(containerData.destinationarrivaliso);
+  const date7 = new Date(containerData.returncontainerdateiso);
   const [currlocation, setCurrlocation] = useState(null);
   const [currdescription, setCurrdescription] = useState(null);
   const [currdate, setCurrdate] = useState(null);
@@ -74,7 +74,7 @@ const ContainerPage = ({ containerData }) => {
           setCurrtime(containerData.origindeparturetime))
         : "";
     };
-  });
+  }, []);
   return (
     <>
       <Navbar />
