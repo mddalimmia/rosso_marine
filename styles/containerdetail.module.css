@@ -7,6 +7,8 @@
 }
 .wrapper {
   padding: 12px 32px;
+  margin-bottom: 5%;
+  margin-top: 3%;
 }
 .bltable table {
   table-layout: fixed;
@@ -29,7 +31,11 @@
 
 .timelineWrapper {
   width: 100%;
+  margin-bottom: 3%;
   border: 1px solid gray;
+}
+.timeline {
+  margin-bottom: 5%;
 }
 
 .notification {

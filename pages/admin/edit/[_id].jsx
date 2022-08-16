@@ -315,13 +315,13 @@ const Index = ({ editData }) => {
                 <h3>At Loading</h3>
               </label>
               <input
-                type="text"
+                type="date"
                 defaultValue={editData.loadingarrivaldate}
                 onChange={(e) => setLoadingarrivaldate(e.target.value)}
                 placeholder="Date"
               />
               <input
-                type="text"
+                type="time"
                 defaultValue={editData.loadingarrivaltime}
                 onChange={(e) => setLoadingarrivaltime(e.target.value)}
                 placeholder="Time"
@@ -332,13 +332,13 @@ const Index = ({ editData }) => {
                 <h3>At Discharging</h3>
               </label>
               <input
-                type="text"
+                type="date"
                 defaultValue={editData.dischargearrivaldate}
                 onChange={(e) => setDischargearrivaldate(e.target.value)}
                 placeholder="Date"
               />
               <input
-                type="text"
+                type="time"
                 defaultValue={editData.dischargearrivaltime}
                 onChange={(e) => setDischargearrivaltime(e.target.value)}
                 placeholder="Time"
@@ -349,13 +349,13 @@ const Index = ({ editData }) => {
                 <h3>At Destination</h3>
               </label>
               <input
-                type="text"
+                type="date"
                 defaultValue={editData.destinationarrivaldate}
                 onChange={(e) => setDestinationarrivaldate(e.target.value)}
                 placeholder="Date"
               />
               <input
-                type="text"
+                type="time"
                 defaultValue={editData.destinationarrivaltime}
                 onChange={(e) => setDestinationarrivaltime(e.target.value)}
                 placeholder="Time"
@@ -370,13 +370,13 @@ const Index = ({ editData }) => {
                   <h3>From Origin</h3>
                 </label>
                 <input
-                  type="text"
+                  type="date"
                   defaultValue={editData.origindeparturedate}
                   onChange={(e) => setOrigindeparturedate(e.target.value)}
                   placeholder="Date"
                 />
                 <input
-                  type="text"
+                  type="time"
                   defaultValue={editData.origindeparturetime}
                   onChange={(e) => setOrigindeparturetime(e.target.value)}
                   placeholder="Time"
@@ -387,13 +387,13 @@ const Index = ({ editData }) => {
                   <h3>From Loading</h3>
                 </label>
                 <input
-                  type="text"
+                  type="date"
                   defaultValue={editData.loadingdeparturedate}
                   onChange={(e) => setLoadingdeparturedate(e.target.value)}
                   placeholder="Date"
                 />
                 <input
-                  type="text"
+                  type="time"
                   defaultValue={editData.loadingdeparturetime}
                   onChange={(e) => setLoadingdeparturetime(e.target.value)}
                   placeholder="Time"
@@ -404,13 +404,13 @@ const Index = ({ editData }) => {
                   <h3>From Disharge</h3>
                 </label>
                 <input
-                  type="text"
+                  type="date"
                   defaultValue={editData.dischargedeparturedate}
                   placeholder="Optional Date"
                   onChange={(e) => setDischargedeparturedate(e.target.value)}
                 />
                 <input
-                  type="text"
+                  type="time"
                   defaultValue={editData.dischargedeparturetime}
                   placeholder="Optional Time"
                   onChange={(e) => setDischargedeparturetime(e.target.value)}
@@ -424,13 +424,13 @@ const Index = ({ editData }) => {
               <div className={styles.return}>
                 <label>Date Time </label>
                 <input
-                  type="text"
+                  type="date"
                   defaultValue={editData.returncontainerdate}
                   placeholder="Date"
                   onChange={(e) => setReturncontainerdate(e.target.value)}
                 />
                 <input
-                  type="text"
+                  type="time"
                   defaultValue={editData.returncontainertime}
                   placeholder="Time"
                   onChange={(e) => setReturncontainertime(e.target.value)}
@@ -446,7 +446,8 @@ const Index = ({ editData }) => {
                   <h3>At Loading Port</h3>
                 </label>
                 <input
-                  type="text"
+                  type="datetime-local"
+                  min="2022-08-15T00:00"
                   defaultValue={editData.loadarrivaliso}
                   placeholder="e.g:2022-12-12T14:20"
                   onChange={(e) => setLoadarrivaliso(e.target.value)}
@@ -457,7 +458,8 @@ const Index = ({ editData }) => {
                   <h3>At Discharging Port</h3>
                 </label>
                 <input
-                  type="text"
+                  type="datetime-local"
+                  min="2022-08-15T00:00"
                   defaultValue={editData.dischargearrivaliso}
                   placeholder="e.g:2022-12-12T14:20"
                   onChange={(e) => setDischargearrivaliso(e.target.value)}
@@ -469,7 +471,8 @@ const Index = ({ editData }) => {
                   <h3>At Destination</h3>
                 </label>
                 <input
-                  type="text"
+                  type="datetime-local"
+                  min="2022-08-15T00:00"
                   defaultValue={editData.destinationarrivaliso}
                   placeholder="e.g:2022-12-12T14:20"
                   onChange={(e) => setDestinationarrivaliso(e.target.value)}
@@ -484,7 +487,8 @@ const Index = ({ editData }) => {
                 <h3>From Origin</h3>
               </label>
               <input
-                type="text"
+                type="datetime-local"
+                min="2022-08-15T00:00"
                 defaultValue={editData.origindepurtureiso}
                 placeholder="e.g:2022-12-12T14:20"
                 onChange={(e) => setOrigindepurtureiso(e.target.value)}
@@ -495,7 +499,8 @@ const Index = ({ editData }) => {
                 <h3>From Loading Port</h3>
               </label>
               <input
-                type="text"
+                type="datetime-local"
+                min="2022-08-15T00:00"
                 defaultValue={editData.loaddepurtureiso}
                 placeholder="e.g:2022-12-12T14:20"
                 onChange={(e) => setLoaddepurtureiso(e.target.value)}
@@ -506,7 +511,8 @@ const Index = ({ editData }) => {
                 <h3>From Discharging Port</h3>
               </label>
               <input
-                type="text"
+                type="datetime-local"
+                min="2022-08-15T00:00"
                 defaultValue={editData.dischargedepurtureiso}
                 placeholder="e.g:2022-12-12T14:20"
                 onChange={(e) => setDischargedepurtureiso(e.target.value)}
@@ -523,7 +529,8 @@ const Index = ({ editData }) => {
               <h3>Return Date Time</h3>
             </label>
             <input
-              type="text"
+              type="datetime-local"
+              min="2022-08-15T00:00"
               defaultValue={editData.returncontainerdateiso}
               placeholder="e.g:2022-12-12T14:20"
               onChange={(e) => setReturnContainerdateiso(e.target.value)}

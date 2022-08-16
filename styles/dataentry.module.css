@@ -12,6 +12,7 @@
   width: 70%;
   padding-left: 7px;
   padding-right: 75px;
+  font-size: 20px;
 }
 .ginfo {
   display: flex;
@@ -50,6 +51,7 @@
 }
 .arrival input {
   margin: 10px;
+  font-size: 20px;
 }
 .iso {
   display: flex;
@@ -63,15 +65,29 @@
 .isotime input {
   height: 40px;
   width: 255px;
+  font-size: 20px;
   padding-left: 7px;
   padding-right: 75px;
 }
+.btnContainer {
+  display: flex;
+}
 .btn {
-  padding: 10px 45px;
-  margin: 20px 0px;
+  padding: 0px 45px;
+  margin: 30px 10px;
   font-size: 15px;
   font-weight: 400;
-  background-color: rgb(5, 59, 5);
+  background-color: rgb(3, 43, 24);
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.btn2 {
+  padding: 10px 15px;
+  margin: 30px 10px;
+  font-size: 15px;
+  font-weight: 400;
+  background-color: rgb(10, 6, 68);
   color: white;
   cursor: pointer;
   border-radius: 5px;

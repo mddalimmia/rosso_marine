@@ -1,11 +1,13 @@
 import axios from "axios";
 import React from "react";
 import { useState } from "react";
+import { useRouter } from "next/router";
 import Footer from "../../Components/Footer";
 import Navbar from "../../Components/navbar";
 import styles from "../../styles/dataentry.module.css";
 
 const Index = () => {
+  const router = useRouter();
   const [mode, setMode] = useState();
   const [containerno, setContainerno] = useState();
   const [booked, setBooked] = useState();
@@ -101,6 +103,7 @@ const Index = () => {
         japanafr,
       };
       await axios.post(`/api/data`, newData);
+      router.push("/admin/manage");
     } catch (err) {
       console.log(err);
     }
@@ -110,7 +113,7 @@ const Index = () => {
     <>
       <Navbar />
       <div className={styles.container}>
-        <h1>Enter your B/L / Container Data</h1>
+        <h1>Enter your B/L or Container Data</h1>
         <div className={styles.mode}>
           <div>
             <h5>Select Shipping Mode</h5>
@@ -289,12 +292,12 @@ const Index = () => {
                   <h3>At Loading</h3>
                 </label>
                 <input
-                  type="text"
+                  type="date"
                   onChange={(e) => setLoadingarrivaldate(e.target.value)}
                   placeholder="Date"
                 />
                 <input
-                  type="text"
+                  type="time"
                   onChange={(e) => setLoadingarrivaltime(e.target.value)}
                   placeholder="Time"
                 />
@@ -305,12 +308,12 @@ const Index = () => {
                   <h3>At Discharging</h3>
                 </label>
                 <input
-                  type="text"
+                  type="date"
                   onChange={(e) => setDischargearrivaldate(e.target.value)}
                   placeholder="Date"
                 />
                 <input
-                  type="text"
+                  type="time"
                   onChange={(e) => setDischargearrivaltime(e.target.value)}
                   placeholder="Time"
                 />
@@ -320,12 +323,12 @@ const Index = () => {
                   <h3>At Destination</h3>
                 </label>
                 <input
-                  type="text"
+                  type="date"
                   onChange={(e) => setDestinationarrivaldate(e.target.value)}
                   placeholder="Date"
                 />
                 <input
-                  type="text"
+                  type="time"
                   onChange={(e) => setDestinationarrivaltime(e.target.value)}
                   placeholder="Time"
                 />
@@ -340,12 +343,12 @@ const Index = () => {
                     <h3>From Origin</h3>
                   </label>
                   <input
-                    type="text"
+                    type="date"
                     onChange={(e) => setOrigindeparturedate(e.target.value)}
-                    placeholder="Date"
+                    placeholder=""
                   />
                   <input
-                    type="text"
+                    type="time"
                     onChange={(e) => setOrigindeparturetime(e.target.value)}
                     placeholder="Time"
                   />
@@ -355,12 +358,12 @@ const Index = () => {
                     <h3>From Loading</h3>
                   </label>
                   <input
-                    type="text"
+                    type="date"
                     onChange={(e) => setLoadingdeparturedate(e.target.value)}
                     placeholder="Date"
                   />
                   <input
-                    type="text"
+                    type="time"
                     onChange={(e) => setLoadingdeparturetime(e.target.value)}
                     placeholder="Time"
                   />
@@ -370,12 +373,12 @@ const Index = () => {
                     <h3>From Disharge</h3>
                   </label>
                   <input
-                    type="text"
+                    type="date"
                     placeholder="Optional Date"
                     onChange={(e) => setDischargedeparturedate(e.target.value)}
                   />
                   <input
-                    type="text"
+                    type="time"
                     placeholder="Optional Time"
                     onChange={(e) => setDischargedeparturetime(e.target.value)}
                   />
@@ -390,12 +393,12 @@ const Index = () => {
                     <h3> Return</h3>
                   </label>
                   <input
-                    type="text"
+                    type="date"
                     placeholder="Date"
                     onChange={(e) => setReturncontainerdate(e.target.value)}
                   />
                   <input
-                    type="text"
+                    type="time"
                     placeholder="Time"
                     onChange={(e) => setReturncontainertime(e.target.value)}
                   />
@@ -410,7 +413,8 @@ const Index = () => {
                     <h3>At Loading Port</h3>
                   </label>
                   <input
-                    type="text"
+                    type="datetime-local"
+                    min="2022-08-15T00:00"
                     placeholder="e.g:2022-12-12T14:20"
                     onChange={(e) => setLoadarrivaliso(e.target.value)}
                   />
@@ -420,7 +424,8 @@ const Index = () => {
                     <h3>At Discharging Port</h3>
                   </label>
                   <input
-                    type="text"
+                    type="datetime-local"
+                    min="2022-08-15T00:00"
                     placeholder="e.g:2022-12-12T14:20"
                     onChange={(e) => setDischargearrivaliso(e.target.value)}
                   />
@@ -431,7 +436,8 @@ const Index = () => {
                     <h3>At Destination</h3>
                   </label>
                   <input
-                    type="text"
+                    type="datetime-local"
+                    min="2022-08-15T00:00"
                     placeholder="e.g:2022-12-12T14:20"
                     onChange={(e) => setDestinationarrivaliso(e.target.value)}
                   />
@@ -442,11 +448,11 @@ const Index = () => {
               </div>
               <div className={styles.isotime}>
                 <label>
-                  {" "}
                   <h3>From Origin</h3>
                 </label>
                 <input
-                  type="text"
+                  type="datetime-local"
+                  min="2022-08-15T00:00"
                   placeholder="e.g:2022-12-12T14:20"
                   onChange={(e) => setOrigindepurtureiso(e.target.value)}
                 />
@@ -456,7 +462,8 @@ const Index = () => {
                   <h3>From Loading Port</h3>
                 </label>
                 <input
-                  type="text"
+                  type="datetime-local"
+                  min="2022-08-15T00:00"
                   placeholder="e.g:2022-12-12T14:20"
                   onChange={(e) => setLoaddepurtureiso(e.target.value)}
                 />
@@ -466,7 +473,8 @@ const Index = () => {
                   <h3>From Discharging Port </h3>
                 </label>
                 <input
-                  type="text"
+                  type="datetime-local"
+                  min="2022-08-15T00:00"
                   placeholder="e.g:2022-12-12T14:20"
                   onChange={(e) => setDischargedepurtureiso(e.target.value)}
                 />
@@ -482,7 +490,8 @@ const Index = () => {
                 <h3> Return Date Time</h3>
               </label>
               <input
-                type="text"
+                type="datetime-local"
+                min="2022-08-15T00:00"
                 placeholder="e.g:2022-12-12T14:20"
                 onChange={(e) => setReturnContainerdateiso(e.target.value)}
               />
@@ -545,9 +554,19 @@ const Index = () => {
             Japan/AFR
           </div>
         </div>
-        <button onClick={handleCreate} className={styles.btn}>
-          Upload
-        </button>
+        <div className={styles.btnContainer}>
+          <button onClick={handleCreate} className={styles.btn}>
+            Upload
+          </button>
+          <button
+            className={styles.btn2}
+            onClick={() => {
+              router.push("/admin");
+            }}
+          >
+            Go to Dashboard
+          </button>
+        </div>
       </div>
       <Footer />
     </>

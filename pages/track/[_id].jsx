@@ -55,8 +55,8 @@ const ContainerPage = ({ containerData }) => {
         : date4 <= new Date()
         ? (setCurrdescription("Vessel Arrived at Discharging Port"),
           setCurrlocation(containerData.dischargelocation),
-          setCurrdate(containerData.dischargedeparturedate),
-          setCurrtime(containerData.dischargedeparturetime))
+          setCurrdate(containerData.dischargearrivaldate),
+          setCurrtime(containerData.dischargearrivaltime))
         : date3 <= new Date()
         ? (setCurrdescription("Vessel Depurtured from Loading Port"),
           setCurrlocation(containerData.loadinglocation),
@@ -72,7 +72,7 @@ const ContainerPage = ({ containerData }) => {
           setCurrlocation(containerData.originlocation),
           setCurrdate(containerData.origindeparturedate),
           setCurrtime(containerData.origindeparturetime))
-        : Error("location can't be tracked");
+        : "";
     };
   });
   return (
@@ -93,7 +93,7 @@ const ContainerPage = ({ containerData }) => {
             <div className={styles.timelinebody}>
               <div className={styles.notification}>
                 <MdNotificationsActive className={styles.active} />
-                <h3>Vessel Depurtured From POL</h3>
+                <h3>{currdescription}</h3>
               </div>
               <div className={styles.timeline}>
                 <div className={styles.dot}></div>
@@ -304,7 +304,7 @@ const ContainerPage = ({ containerData }) => {
                   <td>{containerData.loadingarrivaldate}</td>
                   <td> {containerData.loadingarrivaltime}</td>
                   <td>{containerData.loadinglocation}</td>
-                  <td>Vessel Arrives at POL</td>
+                  <td>Vessel Arrived at POL</td>
                 </tr>
                 <tr>
                   <td>{containerData.loadingdeparturedate}</td>
@@ -323,6 +323,12 @@ const ContainerPage = ({ containerData }) => {
                   <td> {containerData.destinationarrivaltime}</td>
                   <td>{containerData.destinationlocation}</td>
                   <td>Vessel Arrived at Destination</td>
+                </tr>
+                <tr>
+                  <td>{containerData.returncontainerdate}</td>
+                  <td> {containerData.returncontainertime}</td>
+                  <td>{containerData.destinationlocation}</td>
+                  <td>Empty Container Returned</td>
                 </tr>
               </table>
             </div>

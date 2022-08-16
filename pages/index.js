@@ -22,7 +22,7 @@ export default function Home({ information }) {
         <div className={styles.input}>
           <input
             type="text"
-            placeholder="Enter Your B/L No."
+            placeholder="Enter your B/L or Container No."
             onChange={(e) => setQuery(e.target.value)}
           />
         </div>
