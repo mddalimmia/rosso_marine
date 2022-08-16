@@ -37,7 +37,7 @@ const ContainerPage = ({ containerData }) => {
   }, [modeType]);
   useEffect(() => {
     return () => {
-      date7 <= new Date()
+      date7 <= new Date(Date.now())
         ? (setCurrdescription("Empty Container Returned"),
           setCurrlocation(containerData.destinationlocation),
           setCurrdate(containerData.returncontainerdate),
