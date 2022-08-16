@@ -20,7 +20,7 @@ const ContainerPage = ({ containerData }) => {
   const date4 = new Date(containerData.dischargearrivaliso);
   const date5 = new Date(containerData.dischargedepurtureiso);
   const date6 = new Date(containerData.destinationarrivaliso);
-  const date7 = new Date(containerData.returncontainerdate);
+  const date7 = new Date(containerData.returncontainerdateiso);
   const [currlocation, setCurrlocation] = useState(null);
   const [currdescription, setCurrdescription] = useState(null);
   const [currdate, setCurrdate] = useState(null);
@@ -37,37 +37,37 @@ const ContainerPage = ({ containerData }) => {
   }, [modeType]);
   useEffect(() => {
     return () => {
-      date7 <= new Date()
+      date7 <= new Date().toLocaleString()
         ? (setCurrdescription("Empty Container Returned"),
           setCurrlocation(containerData.destinationlocation),
           setCurrdate(containerData.returncontainerdate),
           setCurrtime(containerData.returncontainertime))
-        : date6 <= Date()
+        : date6 <= new Date().toLocaleString()
         ? (setCurrdescription("Vessel Arrived at Destination"),
           setCurrlocation(containerData.destinationlocation),
           setCurrdate(containerData.destinationarrivaldate),
           setCurrtime(containerData.destinationarrivaltime))
-        : date5 <= Date()
+        : date5 <= new Date().toLocaleString()
         ? (setCurrdescription("Vessel Depurtured From Discharging Port"),
           setCurrlocation(containerData.dischargelocation),
           setCurrdate(containerData.dischargedeparturedate),
           setCurrtime(containerData.dischargedeparturetime))
-        : date4 <= Date()
+        : date4 <= new Date().toLocaleString()
         ? (setCurrdescription("Vessel Arrived at Discharging Port"),
           setCurrlocation(containerData.dischargelocation),
           setCurrdate(containerData.dischargearrivaldate),
           setCurrtime(containerData.dischargearrivaltime))
-        : date3 <= Date()
+        : date3 <= new Date().toLocaleString()
         ? (setCurrdescription("Vessel Depurtured from Loading Port"),
           setCurrlocation(containerData.loadinglocation),
           setCurrdate(containerData.loadingdeparturedate),
           setCurrtime(containerData.loadingdeparturetime))
-        : date2 <= Date()
+        : date2 <= new Date().toLocaleString()
         ? (setCurrdescription("Vessel Arrived at Loading Port"),
           setCurrlocation(containerData.loadinglocation),
           setCurrdate(containerData.loadingarrivaldate),
           setCurrtime(containerData.loadingarrivaltime))
-        : date1 <= Date()
+        : date1 <= new Date().toLocaleString()
         ? (setCurrdescription("Vessel Depurtured from Origin"),
           setCurrlocation(containerData.originlocation),
           setCurrdate(containerData.origindeparturedate),
