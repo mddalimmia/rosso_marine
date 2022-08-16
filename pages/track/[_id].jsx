@@ -14,13 +14,13 @@ import Footer from "../../Components/Footer";
 import Navbar from "../../Components/navbar";
 const ContainerPage = ({ containerData }) => {
   const modeType = containerData.mode;
-  const date1 = new Date(containerData.origindepurtureiso);
-  const date2 = new Date(containerData.loadarrivaliso);
-  const date3 = new Date(containerData.loaddepurtureiso);
-  const date4 = new Date(containerData.dischargearrivaliso);
-  const date5 = new Date(containerData.dischargedepurtureiso);
-  const date6 = new Date(containerData.destinationarrivaliso);
-  const date7 = new Date(containerData.returncontainerdateiso);
+  const date1 = new Date(containerData.origindepurtureiso).toLocaleString();
+  const date2 = new Date(containerData.loadarrivaliso).toLocaleString();
+  const date3 = new Date(containerData.loaddepurtureiso).toLocaleString();
+  const date4 = new Date(containerData.dischargearrivaliso).toLocaleString();
+  const date5 = new Date(containerData.dischargedepurtureiso).toLocaleString();
+  const date6 = new Date(containerData.destinationarrivaliso).toLocaleString();
+  const date7 = new Date(containerData.returncontainerdateiso).toLocaleString();
   const [currlocation, setCurrlocation] = useState(null);
   const [currdescription, setCurrdescription] = useState(null);
   const [currdate, setCurrdate] = useState(null);
@@ -37,44 +37,44 @@ const ContainerPage = ({ containerData }) => {
   }, [modeType]);
   useEffect(() => {
     return () => {
-      date7 <= new Date().toLocaleString()
+      date7 <= new Date()
         ? (setCurrdescription("Empty Container Returned"),
           setCurrlocation(containerData.destinationlocation),
           setCurrdate(containerData.returncontainerdate),
           setCurrtime(containerData.returncontainertime))
-        : date6 <= new Date().toLocaleString()
+        : date6 <= new Date()
         ? (setCurrdescription("Vessel Arrived at Destination"),
           setCurrlocation(containerData.destinationlocation),
           setCurrdate(containerData.destinationarrivaldate),
           setCurrtime(containerData.destinationarrivaltime))
-        : date5 <= new Date().toLocaleString()
+        : date5 <= new Date()
         ? (setCurrdescription("Vessel Depurtured From Discharging Port"),
           setCurrlocation(containerData.dischargelocation),
           setCurrdate(containerData.dischargedeparturedate),
           setCurrtime(containerData.dischargedeparturetime))
-        : date4 <= new Date().toLocaleString()
+        : date4 <= new Date()
         ? (setCurrdescription("Vessel Arrived at Discharging Port"),
           setCurrlocation(containerData.dischargelocation),
           setCurrdate(containerData.dischargearrivaldate),
           setCurrtime(containerData.dischargearrivaltime))
-        : date3 <= new Date().toLocaleString()
+        : date3 <= new Date()
         ? (setCurrdescription("Vessel Depurtured from Loading Port"),
           setCurrlocation(containerData.loadinglocation),
           setCurrdate(containerData.loadingdeparturedate),
           setCurrtime(containerData.loadingdeparturetime))
-        : date2 <= new Date().toLocaleString()
+        : date2 <= new Date()
         ? (setCurrdescription("Vessel Arrived at Loading Port"),
           setCurrlocation(containerData.loadinglocation),
           setCurrdate(containerData.loadingarrivaldate),
           setCurrtime(containerData.loadingarrivaltime))
-        : date1 <= new Date().toLocaleString()
+        : date1 <= new Date()
         ? (setCurrdescription("Vessel Depurtured from Origin"),
           setCurrlocation(containerData.originlocation),
           setCurrdate(containerData.origindeparturedate),
           setCurrtime(containerData.origindeparturetime))
         : "";
     };
-  }, []);
+  });
   return (
     <>
       <Navbar />
