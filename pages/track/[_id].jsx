@@ -14,13 +14,13 @@ import Footer from "../../Components/Footer";
 import Navbar from "../../Components/navbar";
 const ContainerPage = ({ containerData }) => {
   const modeType = containerData.mode;
-  const date1 = new Date(containerData.origindepurtureiso);
-  const date2 = new Date(containerData.loadarrivaliso);
-  const date3 = new Date(containerData.loaddepurtureiso);
-  const date4 = new Date(containerData.dischargearrivaliso);
-  const date5 = new Date(containerData.dischargedepurtureiso);
-  const date6 = new Date(containerData.destinationarrivaliso);
-  const date7 = new Date(containerData.returncontainerdateiso);
+  const date1 = Date.parse(containerData.origindepurtureiso);
+  const date2 = Date.parse(containerData.loadarrivaliso);
+  const date3 = Date.parse(containerData.loaddepurtureiso);
+  const date4 = Date.parse(containerData.dischargearrivaliso);
+  const date5 = Date.parse(containerData.dischargedepurtureiso);
+  const date6 = Date.parse(containerData.destinationarrivaliso);
+  const date7 = Date.parse(containerData.returncontainerdateiso);
   const [currlocation, setCurrlocation] = useState(null);
   const [currdescription, setCurrdescription] = useState(null);
   const [currdate, setCurrdate] = useState(null);
@@ -37,42 +37,42 @@ const ContainerPage = ({ containerData }) => {
   }, [modeType]);
   useEffect(() => {
     return () => {
-      date7 <= new Date().toLocaleString("en-SE")
+      date7 <= Date.parse(new Date())
         ? (setCurrdescription("Empty Container Returned"),
           setCurrlocation(containerData.destinationlocation),
           setCurrdate(containerData.returncontainerdate),
           setCurrtime(containerData.returncontainertime))
-        : date6 <= new Date().toLocaleString("en-SE")
+        : date6 <= Date.parse(new Date())
         ? (setCurrdescription("Vessel Arrived at Destination"),
           setCurrlocation(containerData.destinationlocation),
           setCurrdate(containerData.destinationarrivaldate),
           setCurrtime(containerData.destinationarrivaltime))
-        : date5 <= new Date().toLocaleString("en-SE")
+        : date5 <= Date.parse(new Date())
         ? (setCurrdescription("Vessel Depurtured From Discharging Port"),
           setCurrlocation(containerData.dischargelocation),
           setCurrdate(containerData.dischargedeparturedate),
           setCurrtime(containerData.dischargedeparturetime))
-        : date4 <= new Date().toLocaleString("en-SE")
+        : date4 <= Date.parse(new Date())
         ? (setCurrdescription("Vessel Arrived at Discharging Port"),
           setCurrlocation(containerData.dischargelocation),
           setCurrdate(containerData.dischargearrivaldate),
           setCurrtime(containerData.dischargearrivaltime))
-        : date3 <= new Date().toLocaleString("en-SE")
+        : date3 <= Date.parse(new Date())
         ? (setCurrdescription("Vessel Depurtured from Loading Port"),
           setCurrlocation(containerData.loadinglocation),
           setCurrdate(containerData.loadingdeparturedate),
           setCurrtime(containerData.loadingdeparturetime))
-        : date2 <= new Date().toLocaleString("en-SE")
+        : date2 <= Date.parse(new Date())
         ? (setCurrdescription("Vessel Arrived at Loading Port"),
           setCurrlocation(containerData.loadinglocation),
           setCurrdate(containerData.loadingarrivaldate),
           setCurrtime(containerData.loadingarrivaltime))
-        : date1 <= new Date().toLocaleString("en-SE")
+        : date1 <= Date.parse(new Date())
         ? (setCurrdescription("Vessel Depurtured from Origin"),
           setCurrlocation(containerData.originlocation),
           setCurrdate(containerData.origindeparturedate),
           setCurrtime(containerData.origindeparturetime))
-        : "";
+        : setCurrdescription("Vessel Doesn't Departured Yet");
     };
   }, []);
   return (
@@ -87,6 +87,7 @@ const ContainerPage = ({ containerData }) => {
                 <th>{containerData.blno}</th>
               </tr>
             </table>
+            {currIcon}
           </div>
           <div className={styles.mode}></div>
           <div className={styles.timelineWrapper}>
