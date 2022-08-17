@@ -29,52 +29,49 @@ const ContainerPage = ({ containerData }) => {
   const [currIcon, setCurrIcon] = useState();
 
   useEffect(() => {
-    return () => {
-      modeType === "voyage"
-        ? setCurrIcon(GiCargoShip)
-        : setCurrIcon(MdLocalShipping);
-    };
-  });
+    modeType === "voyage"
+      ? setCurrIcon(GiCargoShip)
+      : setCurrIcon(MdLocalShipping);
+  }, []);
   useEffect(() => {
-    return () => {
-      date7 <= Date.parse(new Date())
-        ? (setCurrdescription("Empty Container Returned"),
-          setCurrlocation(containerData.destinationlocation),
-          setCurrdate(containerData.returncontainerdate),
-          setCurrtime(containerData.returncontainertime))
-        : date6 <= Date.parse(new Date())
-        ? (setCurrdescription("Vessel Arrived at Destination"),
-          setCurrlocation(containerData.destinationlocation),
-          setCurrdate(containerData.destinationarrivaldate),
-          setCurrtime(containerData.destinationarrivaltime))
-        : date5 <= Date.parse(new Date())
-        ? (setCurrdescription("Vessel Depurtured From Discharging Port"),
-          setCurrlocation(containerData.dischargelocation),
-          setCurrdate(containerData.dischargedeparturedate),
-          setCurrtime(containerData.dischargedeparturetime))
-        : date4 <= Date.parse(new Date())
-        ? (setCurrdescription("Vessel Arrived at Discharging Port"),
-          setCurrlocation(containerData.dischargelocation),
-          setCurrdate(containerData.dischargearrivaldate),
-          setCurrtime(containerData.dischargearrivaltime))
-        : date3 <= Date.parse(new Date())
-        ? (setCurrdescription("Vessel Depurtured from Loading Port"),
-          setCurrlocation(containerData.loadinglocation),
-          setCurrdate(containerData.loadingdeparturedate),
-          setCurrtime(containerData.loadingdeparturetime))
-        : date2 <= Date.parse(new Date())
-        ? (setCurrdescription("Vessel Arrived at Loading Port"),
-          setCurrlocation(containerData.loadinglocation),
-          setCurrdate(containerData.loadingarrivaldate),
-          setCurrtime(containerData.loadingarrivaltime))
-        : date1 <= Date.parse(new Date())
-        ? (setCurrdescription("Vessel Depurtured from Origin"),
-          setCurrlocation(containerData.originlocation),
-          setCurrdate(containerData.origindeparturedate),
-          setCurrtime(containerData.origindeparturetime))
-        : setCurrdescription("Vessel Doesn't Departured Yet");
-    };
-  });
+    date7 <= Date.parse(new Date())
+      ? (setCurrdescription("Empty Container Returned"),
+        setCurrlocation(containerData.destinationlocation),
+        setCurrdate(containerData.returncontainerdate),
+        setCurrtime(containerData.returncontainertime),
+        console.log(currdescription))
+      : date6 <= Date.parse(new Date())
+      ? (setCurrdescription("Vessel Arrived at Destination"),
+        setCurrlocation(containerData.destinationlocation),
+        setCurrdate(containerData.destinationarrivaldate),
+        setCurrtime(containerData.destinationarrivaltime))
+      : date5 <= Date.parse(new Date())
+      ? (setCurrdescription("Vessel Depurtured From Discharging Port"),
+        setCurrlocation(containerData.dischargelocation),
+        setCurrdate(containerData.dischargedeparturedate),
+        setCurrtime(containerData.dischargedeparturetime))
+      : date4 <= Date.parse(new Date())
+      ? (setCurrdescription("Vessel Arrived at Discharging Port"),
+        setCurrlocation(containerData.dischargelocation),
+        setCurrdate(containerData.dischargearrivaldate),
+        setCurrtime(containerData.dischargearrivaltime))
+      : date3 <= Date.parse(new Date())
+      ? (setCurrdescription("Vessel Depurtured from Loading Port"),
+        setCurrlocation(containerData.loadinglocation),
+        setCurrdate(containerData.loadingdeparturedate),
+        setCurrtime(containerData.loadingdeparturetime))
+      : date2 <= Date.parse(new Date())
+      ? (setCurrdescription("Vessel Arrived at Loading Port"),
+        setCurrlocation(containerData.loadinglocation),
+        setCurrdate(containerData.loadingarrivaldate),
+        setCurrtime(containerData.loadingarrivaltime))
+      : date1 <= Date.parse(new Date())
+      ? (setCurrdescription("Vessel Depurtured from Origin"),
+        setCurrlocation(containerData.originlocation),
+        setCurrdate(containerData.origindeparturedate),
+        setCurrtime(containerData.origindeparturetime))
+      : setCurrdescription("Vessel Doesn't Departured Yet");
+  }, []);
   return (
     <>
       <Navbar />
