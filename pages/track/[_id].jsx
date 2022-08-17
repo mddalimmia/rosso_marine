@@ -34,7 +34,7 @@ const ContainerPage = ({ containerData }) => {
         ? setCurrIcon(GiCargoShip)
         : setCurrIcon(MdLocalShipping);
     };
-  }, [modeType]);
+  });
   useEffect(() => {
     return () => {
       date7 <= Date.parse(new Date())
@@ -74,7 +74,7 @@ const ContainerPage = ({ containerData }) => {
           setCurrtime(containerData.origindeparturetime))
         : setCurrdescription("Vessel Doesn't Departured Yet");
     };
-  }, []);
+  });
   return (
     <>
       <Navbar />
