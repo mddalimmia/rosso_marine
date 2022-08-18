@@ -14,7 +14,7 @@
   justify-content: space-between;
 }
 .buttonContainer {
-  width: 50%;
+  width: 60%;
   padding-left: 20px;
   display: flex;
 }
@@ -72,4 +72,35 @@
 }
 .rights {
   padding-right: 7vw;
+}
+@media only screen and (max-width: 768px) {
+  .wrapper {
+    padding: 15px 0px;
+  }
+  .buttonContainer {
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+  }
+  .callButton {
+    padding: 7px 35px;
+  }
+  .writeButton {
+    padding: 7px 35px;
+  }
+  .logo {
+    padding-right: 0px;
+  }
+  .footerLogo {
+    height: 55px;
+    width: 55px;
+  }
+  .midContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .midContainer div {
+    width: 100%;
+  }
 }

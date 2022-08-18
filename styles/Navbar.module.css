@@ -14,8 +14,8 @@
   width: 100%;
 }
 .navTop ul {
-  justify-content: space-between;
   display: flex;
+  justify-content: space-between;
 }
 .navTop ul li {
   list-style: none;
@@ -29,6 +29,10 @@
   justify-content: center;
   cursor: pointer;
 }
+
+.hamburger {
+  display: none;
+}
 .navBtotom {
   width: 100%;
 }
@@ -40,4 +44,27 @@
 .navBottom ul li {
   list-style: none;
   text-decoration: underline;
+}
+@media only screen and (max-width: 768px) {
+  .navContainer {
+    height: 75px;
+  }
+  .navTop {
+    display: none;
+  }
+  .navBottom {
+    display: none;
+  }
+
+  .logoImage {
+    height: 55px;
+  }
+  .logo {
+    flex: 6;
+  }
+  .hamburger {
+    display: flex;
+    flex: 6;
+    justify-content: flex-end;
+  }
 }

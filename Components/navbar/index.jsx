@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import Logo from "../../public/Logo.svg";
 import styles from "../../styles/Navbar.module.css";
+import { GiHamburgerMenu } from "react-icons/gi";
 const Navbar = () => {
   return (
     <div className={styles.navContainer}>
@@ -21,9 +22,20 @@ const Navbar = () => {
           </ul>
         </div>
         <div className={styles.navMid}>
-          <Link href="/">
-            <Image src={Logo} width="150" height="150" alt="" />
-          </Link>
+          <div className={styles.logo}>
+            <Link href="/">
+              <Image
+                src={Logo}
+                width="100%"
+                height="100%"
+                alt=""
+                className={styles.logoImage}
+              />
+            </Link>
+          </div>
+          <div className={styles.hamburger}>
+            <GiHamburgerMenu className={styles.giMenu} />
+          </div>
         </div>
         <div className={styles.navBottom}>
           <ul>

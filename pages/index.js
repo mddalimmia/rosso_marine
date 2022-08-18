@@ -69,8 +69,8 @@ export default function Home({ information }) {
                   );
                 })}
         </div>
-        <Footer />
       </div>
+      <Footer />
     </div>
   );
 }

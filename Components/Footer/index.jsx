@@ -12,7 +12,13 @@ const Footer = () => {
             <button className={styles.writeButton}>Write</button>
           </div>
           <div className={styles.logo}>
-            <Image src={footerLogo} width="120px" height="110px" alt="" />
+            <Image
+              src={footerLogo}
+              width="100%"
+              height="100%"
+              alt=""
+              className={styles.footerLogo}
+            />
           </div>
         </div>
         <div className={styles.midContainer}>
