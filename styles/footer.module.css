@@ -1,6 +1,6 @@
 .container {
   width: 100%;
-  height: 80vh;
+
   padding: 0;
   margin: 0;
   border-top: 1px solid grey;
@@ -75,7 +75,7 @@
 }
 @media only screen and (max-width: 768px) {
   .wrapper {
-    padding: 15px 0px;
+    padding: 15px 10px;
   }
   .buttonContainer {
     padding: 0;
@@ -83,17 +83,17 @@
     justify-content: space-around;
   }
   .callButton {
-    padding: 7px 35px;
+    padding: 7px 25px;
   }
   .writeButton {
-    padding: 7px 35px;
+    padding: 7px 25px;
   }
   .logo {
     padding-right: 0px;
   }
   .footerLogo {
-    height: 55px;
-    width: 55px;
+    height: 35px;
+    width: 45px;
   }
   .midContainer {
     display: flex;
