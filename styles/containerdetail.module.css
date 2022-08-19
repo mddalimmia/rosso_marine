@@ -267,3 +267,30 @@
   border: 1px solid rgb(112, 110, 110);
   text-align: center;
 }
+@media only screen and (max-width: 768px) {
+  .wrapper {
+    padding: 12px 10px;
+    margin-bottom: 5%;
+    margin-top: 3%;
+  }
+  .bltable table tr th:nth-child(1) {
+    padding: 10px;
+    width: 60%;
+    background-color: rgb(190, 189, 187);
+    color: rgb(6, 7, 7);
+  }
+  .active {
+    font-size: 35px;
+  }
+  .bar {
+    height: 4px;
+  }
+  .timetable table tr th {
+    padding: 0;
+    font-size: small;
+  }
+  .timetable table tr td {
+    padding: 0;
+    font-size: small;
+  }
+}
