@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 import Logo from "../../public/Logo.svg";
+import callButton from "../../public/phone.png";
 import styles from "../../styles/Navbar.module.css";
 import { GiHamburgerMenu } from "react-icons/gi";
 const Navbar = () => {
@@ -22,6 +23,16 @@ const Navbar = () => {
           </ul>
         </div>
         <div className={styles.navMid}>
+          <div className={styles.call}>
+            <Image
+              src={callButton}
+              width="21px"
+              height="21px"
+              alt=""
+              className={styles.callLogo}
+            />
+            <p>+7 (49529) 48-816</p>
+          </div>
           <div className={styles.logo}>
             <Link href="/">
               <Image

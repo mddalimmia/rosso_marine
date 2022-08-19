@@ -78,7 +78,7 @@
     padding: 15px 10px;
   }
   .buttonContainer {
-    padding: 0;
+    padding-left: 10px;
     display: flex;
     justify-content: space-around;
   }
