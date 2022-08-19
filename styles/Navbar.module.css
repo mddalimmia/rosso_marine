@@ -55,6 +55,9 @@
   .navContainer {
     height: 75px;
   }
+  .navWrapper {
+    padding: 0px 5px;
+  }
   .navTop {
     display: none;
   }
