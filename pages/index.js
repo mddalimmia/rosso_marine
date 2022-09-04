@@ -32,8 +32,8 @@ export default function Home({ information }) {
             : information
                 .filter(
                   (informationData) =>
-                    informationData.blno.includes(query) ||
-                    informationData.containerno.includes(query)
+                    informationData.blno === query ||
+                    informationData.containerno === query
                 )
                 .map((informationData, Index) => {
                   return (
